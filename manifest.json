@@ -1,0 +1,14 @@
+{
+  "manifest_version": 2,
+  "name": "Blueblocking",
+  "version": "1.0.0",
+  "description": "Cutting-edge sleep-improvement product - upgrade to Pro for $99",
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["./JS/script.js"],
+      "css": ["./style.css"]
+    }
+  ],
+  "browser_action": {}
+}

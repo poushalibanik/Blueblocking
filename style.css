@@ -1,0 +1,13 @@
+#warmOrange {
+  position: fixed;
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgb(243, 140, 3, 0.2);
+  z-index: 9999;
+  pointer-events: none;
+}
