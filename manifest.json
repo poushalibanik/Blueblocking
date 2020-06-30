@@ -3,6 +3,9 @@
   "name": "Blueblocking",
   "version": "1.0.0",
   "description": "Cutting-edge sleep-improvement product - upgrade to Pro for $99",
+  "icons": {
+    "128": "128.png"
+  },
   "permissions": ["activeTab", "storage"],
   "content_scripts": [
     {
