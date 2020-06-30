@@ -1,24 +1,35 @@
-//create array from HTML collection
-let buttonArray = Array.from(document.getElementsByTagName("button"));
-//loop over each element in buttonArray
+/* eslint-disable func-names */
+/* eslint-disable no-undef */
+/* eslint-disable no-param-reassign */
+// create array from HTML collection
+const buttonArray = Array.from(document.getElementsByTagName('button'));
+// loop over each element in buttonArray
 buttonArray.forEach((element) => {
-  //create event event listener for each element in buttonArray
+  // create event event listener for each element in buttonArray
   element.onclick = function (e) {
-    //get classname from passed in element
+    // get classname from passed in element
     const colorClass = e.target.className;
     //
     // chrome extension language
     //
-    //query chrome for active tab and current window
+    // query chrome for active tab and current window
     chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-      //execute code on tab[0]
-      //code is written as json directly into object
+      // execute code on tab[0]
+      // code is written as json directly into object
       chrome.tabs.executeScript(tabs[0].id, {
-        code:
-          'document.getElementById("overlay").className = "' +
-          colorClass +
-          '";',
+        code: `document.getElementById("overlay").className = "${colorClass}";`,
       });
     });
   };
 });
+
+const slider = document.getElementById('opacityRange');
+
+slider.oninput = function () {
+  // use same callback overlay, but .style.opacity = slider.value / 100
+  chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+    chrome.tabs.executeScript(tabs[0].id, {
+      code: `document.getElementById("overlay").style.opacity = "${slider.value / 100}";`,
+    });
+  });
+};

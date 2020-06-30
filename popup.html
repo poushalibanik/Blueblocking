@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>BLUE BLOCKER</title>
+    <title>BLUE BLOCKING</title>
     <link rel="stylesheet" href="style.css" type="text/css" />
   </head>
-  <body>
-    <div style="padding: 20px;">
-      <button class="warmOrange" value="warmOrange">Warm</button>
-      <button class="softOrange" value="softOrange">Soft</button>
-      <button class="yellowOrange" value="yellowOrange">Yellow</button>
+  <body id="popup-body">
+    <div>
+      <button class="warmOrange" value="warmOrange">warm</button>
+      <button class="softOrange" value="softOrange">soft</button>
+      <button class="yellowOrange" value="yellowOrange">yellow</button>
+    </div>
+    <div class="slideContainer">
+      <input type="range" min="1" max="50" value="20" class="slider" id="opacityRange">
     </div>
 
     <script src="js/popup.js"></script>
