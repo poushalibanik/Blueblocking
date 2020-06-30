@@ -1,6 +1,8 @@
+/* eslint-disable func-style */
 /* eslint-disable func-names */
 /* eslint-disable no-undef */
 /* eslint-disable no-param-reassign */
+
 // create array from HTML collection
 const buttonArray = Array.from(document.getElementsByTagName('button'));
 // loop over each element in buttonArray
@@ -9,6 +11,7 @@ buttonArray.forEach((element) => {
   element.onclick = function (e) {
     // get classname from passed in element
     const colorClass = e.target.className;
+    chrome.storage.sync.set({ color: colorClass });
     //
     // chrome extension language
     //
@@ -33,3 +36,11 @@ slider.oninput = function () {
     });
   });
 };
+
+function storageOpacity(slider) {
+  const opacityVal = `${slider.value / 100}`;
+  chrome.storage.sync.set({ opacity: opacityVal });
+  setTimeout(storageOpacity, 5000, slider);
+}
+
+setTimeout(storageOpacity, 2500, slider);
