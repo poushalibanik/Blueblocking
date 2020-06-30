@@ -28,6 +28,10 @@ buttonArray.forEach((element) => {
 
 const slider = document.getElementById('opacityRange');
 
+chrome.storage.sync.get(['opacity'], (result) => {
+  slider.value = `${result.opacity * 100}`;
+});
+
 slider.oninput = function () {
   // use same callback overlay, but .style.opacity = slider.value / 100
   chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
@@ -37,10 +41,9 @@ slider.oninput = function () {
   });
 };
 
-function storageOpacity(slider) {
-  const opacityVal = `${slider.value / 100}`;
+function storageOpacity(sliderEl) {
+  const opacityVal = `${sliderEl.value / 100}`;
   chrome.storage.sync.set({ opacity: opacityVal });
-  setTimeout(storageOpacity, 5000, slider);
 }
 
-setTimeout(storageOpacity, 2500, slider);
+setInterval(storageOpacity, 2500, slider);
