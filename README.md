@@ -1,4 +1,4 @@
-![Blueblocking Logo](./128.png)
+![Blueblocking Logo](./Ext-Files/128.png)
 
 # Blueblocking
 
