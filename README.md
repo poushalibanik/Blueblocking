@@ -2,7 +2,7 @@
 
 # Blueblocking
 
-**_Blueblocking_** is cutting-edge sleep-improvement technology that protects your from your computer. Don't go to bed without it!
+**Blueblocking** is cutting-edge sleep-improvement technology that protects your from your computer. Don't go to bed without it!
 
 _**Now available in the [Chrome web store](https://chrome.google.com/webstore/detail/blueblocking/epoggnodgbefpmijgpamphoncjahbfhc?hl=en&authuser=2)!**_
 
@@ -14,5 +14,5 @@ If you'd like to see additional filter options added to [Blueblocking](https://e
 
 ### Development Team
 
-[Connor Rose Delisle](https://github.com/connorrose ) 
-[Kevin Fey](https://github.com/kevinfey)
+ - [Connor Rose Delisle](https://github.com/connorrose)   
+ - [Kevin Fey](https://github.com/kevinfey)
